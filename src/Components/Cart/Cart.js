@@ -42,7 +42,7 @@ const Cart = ({setshowCart}) => {
 
   // end for quantity
   const stripePromise = loadStripe(
-    "pk_test_51M2BexSIZcM1iqYUD02P5bYSjeSGa3D5sJsUafe9iqbPFMinKJn4yz53xG4J83ZKV1T0NZ6ieZytfadOBXtxrJOz006vY104Ez"
+    "pk_test_51P2WzpSCwQn45SC3OrbmggL8dHUDD0UxdEndVbW6xQhd5iwd7ZD4glzXSqvPNLebbh0nLFGzgTQvYscNBTNAsnGf00E03Fh6w5"
   );
   const handlePayment = async () => {
     try {
@@ -125,7 +125,7 @@ const Cart = ({setshowCart}) => {
           <li key={item.id} class="flex py-6 p-4 border-b ">
             <div class="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
               <img
-                 src={"http://localhost:1337" + item.img}
+                 src={item.img}
                 alt="Front of satchel with blue canvas body, black straps and handle, drawstring top, and front zipper pouch."
                 class="h-full w-full object-cover object-center"
               />

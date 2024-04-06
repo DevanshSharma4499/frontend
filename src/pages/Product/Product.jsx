@@ -57,18 +57,18 @@ const Product = () => {
             <img
               className="h-[400px]  object-cover"
               src={
-                "http://localhost:1337" +
-                data?.attributes?.img?.data?.attributes?.url
+              
+                data?.attributes?.img?.data[0]?.attributes?.url
               }
             />
             <img
               className="h-[400px] object-cover"
               src={
-                "http://localhost:1337" +
+                
                 data?.attributes?.img2?.data[0]?.attributes?.url
               }
             />
-            <img
+            {/* <img
               className="h-[400px] object-cover"
               src={
                 "http://localhost:1337" +
@@ -95,7 +95,7 @@ const Product = () => {
                 "http://localhost:1337" +
                 data?.attributes?.img2?.data[4]?.attributes?.url
               }
-            />
+            /> */}
             {/* <img className="h-[400px]"
                 src={
                   'http://localhost:1337' +
@@ -187,7 +187,7 @@ const Product = () => {
                     title: data.attributes.title,
                     desc: data.attributes.desc,
                     price: data.attributes.price,
-                    img: data.attributes.img.data.attributes.url,
+                    img: data.attributes.img.data[0].attributes.url,
                     quantity,
                   })
                 )
