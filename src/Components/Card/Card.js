@@ -20,10 +20,11 @@ const Card = ({ item }) => {
             <div className="w-full overflow-hidden bg-cover bg-no-repeat rounded-t-[20px]">
             <img
                 class=" h-[220px] w-full transition duration-300 ease-in-out hover:scale-110  "
-                src={
-                  "http://localhost:1337" +
-                  item.attributes?.img?.data?.attributes?.url
-                }
+                // src={
+                //   "http://localhost:1337" +
+                //   item.attributes?.img?.data?.attributes?.url
+                // }
+                src={item.attributes.img.data[0].attributes.url}
                 alt=""
                 draggable="false"
               />

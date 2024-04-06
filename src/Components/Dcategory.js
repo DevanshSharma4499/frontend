@@ -23,10 +23,13 @@ const Dcategory = () => {
               <div class="aspect-square overflow-hidden w-full h-full rounded-lg">
                 <img
                   class="group-hover:scale-125 h-full w-full object-cover transition-all duration-300 bg-white"
-                  src={
-                    " http://localhost:1337" +
-                    item?.attributes?.img?.data[0]?.attributes?.url
+                  // src={
+                  //   " http://localhost:1337" +
+                  //   item?.attributes?.img?.data[0]?.attributes?.url
                    
+                  // }
+                  src={
+                    item?.attributes?.img?.data[0]?.attributes?.url
                   }
                   draggable="false"
                 />
