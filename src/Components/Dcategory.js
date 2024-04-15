@@ -1,9 +1,13 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import useFetch from "../hooks/useFetch";
+import Lottie, { LottieRefCurrentProps } from "lottie-react";
+import { useRef } from "react";
+import animatedData from "../assets/animated.json";
 const Dcategory = () => {
   const { data, loading, error } = useFetch(`/categories?populate=*`);
   const navigate = useNavigate();
+  const phoneRef = useRef();
   return (
     <>
       <div>
@@ -13,7 +17,19 @@ const Dcategory = () => {
             error
             ? "Something went wrong!"
             : loading
-            ? "loading"
+            ? <div className="flex justify-center items-center max-h-xs">
+            <Lottie
+                              onComplete={() => {
+                                phoneRef.current?.setSpeed(0.6);
+                                phoneRef.current?.setDirection(-1);
+                                phoneRef.current?.play();
+                                // setshowCart(false)
+                              }}
+                              loop={true}
+                              lottieRef={phoneRef}
+                              animationData={animatedData}
+                            />
+                        </div>
             : data?.map((item) => (
             <article
               key={item.id}

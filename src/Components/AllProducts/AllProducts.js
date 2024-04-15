@@ -2,12 +2,15 @@ import React from "react";
 import useFetch from "../../hooks/useFetch";
 import Card from "../Card/Card";
 import { Swiper, SwiperSlide } from "swiper/react";
+import Lottie, { LottieRefCurrentProps } from "lottie-react";
+import { useRef } from "react";
+import loadingData from "../../assets/loading.json";
 import "swiper/css";
 import "swiper/css/pagination";
 import { FreeMode, Pagination, Autoplay } from "swiper/modules";
 const AllProducts = () => {
   const { data, loading, error } = useFetch(`/products?populate=*`);
-
+  const phoneRef = useRef();
   return (
     <div className="mx-6">
       <div className=" ">
@@ -70,7 +73,19 @@ const AllProducts = () => {
           {error
             ? "Something went wrong!"
             : loading
-            ? "loading"
+            ? <div className="flex justify-center items-center max-h-xs">
+<Lottie
+                  onComplete={() => {
+                    phoneRef.current?.setSpeed(0.6);
+                    phoneRef.current?.setDirection(-1);
+                    phoneRef.current?.play();
+                    // setshowCart(false)
+                  }}
+                  loop={true}
+                  lottieRef={phoneRef}
+                  animationData={loadingData}
+                />
+            </div>
             : data?.map((item) => (
                 <SwiperSlide>
                   <Card item={item} key={item.id} />
