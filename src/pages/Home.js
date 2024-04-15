@@ -5,7 +5,7 @@ import Categories from "../Components/Categories/Categories";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Card from "../Components/Card/Card";
 import Tittle from "../Components/Head/Tittle";
-
+import { useState } from "react";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
@@ -18,16 +18,17 @@ import Dcategory from "../Components/Dcategory";
 // import SubCategory from "../Components/Categories/SubCategory";
 
 const Home = () => {
+  const [hovered, setHovered] = React.useState(false);
   // const { data} = useFetch(
   //   `/categories?populate=*`
   // );
   return (
     <div className="">
       {" "}
-    <section className="pt-10 overflow-hidden bg-[#e6ffe6] md:pt-0 sm:pt-16 2xl:pt-12 home_image">
+    <section className="pt-10 overflow-hidden bg-[#dff5ff] md:pt-0 sm:pt-16 2xl:pt-12 home_image h-screen">
       <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
         <div className="grid items-center grid-cols-1 md:grid-cols-2">
-          <div>
+          <div className="mt-12">
             <h1 className="text-4xl  font-bold leading-snug text-[#000000] sm:text-4xl lg:text-5xl xl:text-6xl xl:leading-snug">
               Shopworks&nbsp;<span>Commonstore</span>{" "}
               <br className="block sm:hidden" />
@@ -62,6 +63,35 @@ const Home = () => {
         </div>
       </div>
     </section>
+    <div
+
+className={`relative rounded-lg overflow-hidden cursor-pointer transition duration-300 ease-in-out ${hovered ? 'scale-105' : 'scale-100'}`}
+
+onMouseEnter={() => setHovered(true)}
+
+onMouseLeave={() => setHovered(false)}
+
+>
+
+<img
+
+  className="w-full h-48 object-cover"
+
+  src="https://source.unsplash.com/random/800x600"
+
+  alt="Home Card"
+
+/>
+
+<div className="absolute inset-0 bg-gradient-to-b from-transparent to-gray-800 opacity-50"></div>
+
+<div className="absolute inset-0 flex items-center justify-center text-white">
+
+  <div className="text-xl font-medium">Home Card</div>
+
+</div>
+
+</div>
       {/* <section className="bg-white m-4">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-0 pt-4 flex justify-between items-center">
           <div className="space-y-6">
@@ -351,7 +381,7 @@ const Home = () => {
       {/* <SubCategory/> */}
       <Tittle
         name="Select By Category"
-        head="improve your digestive health and prevent health problems"
+        // head="improve your digestive health and prevent health problems"
         style={{ padding: "30px" }}
       />
       <Dcategory />
@@ -366,14 +396,14 @@ const Home = () => {
           heard of them man bun deep jianbing selfies heirloom.
         </p>
       </div> */}
-      <div>
+      {/* <div>
         <Tittle
           name="Digestive Care"
           head="improve your digestive health and prevent health problems"
           style={{ padding: "30px" }}
         />
-      </div>
-      <FeaturedProducts type="vihan" />
+      </div> */}
+      {/* <FeaturedProducts type="vihan" /> */}
       {/* <div className="flex w-full mb-20 flex-wrap my-4">
         <h1 className="sm:text-3xl text-2xl font-medium title-font text-gray-900 lg:w-1/3 lg:mb-0 mb-4">
           All Products
@@ -385,8 +415,8 @@ const Home = () => {
         </p>
       </div> */}
       <Tittle
-        name="Choose Your Care"
-        head="Choose from a wide range of effective ayurvedic products"
+        name="Choose Your Products"
+        head="Choose from a wide range of  products"
         style={{ padding: "30px" }}
       />
       <AllProducts />
@@ -400,14 +430,14 @@ const Home = () => {
           heard of them man bun deep jianbing selfies heirloom.
         </p>
       </div> */}
-      <Tittle
+      {/* <Tittle
         name="Piles Care"
         head="
 
           Don’t let piles stop you from doing your best."
         style={{ padding: "30px" }}
       />
-      <FeaturedProducts type="Piles Care" />
+      <FeaturedProducts type="deepakstore" /> */}
       {/* <section
         className="bg-[#d5eadb]  m-5  flex items-center justify-between box-shadows2"
         style={{ borderRadius: "12px" }}

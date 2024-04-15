@@ -21,14 +21,14 @@ export const cartSlice = createSlice({
     },
     increaseQuantity: (state, action) => {
       const item = state.products.find(
-        (item) => item._id === action.payload._id
+        (item) => item.id === action.payload.id
       );
       item && item.quantity++;
       toast.success('increase quantity')
     },
     decreaseQuantity: (state, action) => {
       const item = state.products.find(
-        (item) => item._id === action.payload._id
+        (item) => item.id === action.payload.id
       );
       if (item?.quantity === 1) {
         // item.quantity === 1;

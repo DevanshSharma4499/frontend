@@ -62,7 +62,7 @@ const Footer = () => {
 
             </div> */}
 
-      <footer className="site-footer critical-hidden" id="footer">
+      <footer className="site-footer critical-hidden " id="footer">
         <div className="page-width">
           <div className="site-footer__content foo-bor-b">
             <div
@@ -72,7 +72,7 @@ const Footer = () => {
                     "
             >
               <div className="site-footer__item-inner site-footer__item-inner--link_list">
-                <p className="h4">Online Gadget Store</p>
+                <p className="h4">ShopWorks</p>
                 <ul
                   className="site-footer__linklist
                             "
@@ -182,11 +182,11 @@ const Footer = () => {
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Deserunt id iure ullam vel quibusdam aliquid, eligendi.
                   </p>
-                  <p>Email: onlinegadgetstore@gmail.com</p>
-                  <p>Phone: +91-9099776139</p>
+                  <p>Email: shopworks@gmail.com</p>
+                  <p>Phone: +91-9624226677</p>
                   <p>
-                    Address: 302-303 Samedh Complex, near associate petrol pump,
-                    CG Road- Ahmedabad 380009
+                    Address: 124 Shailganga Society, Near IP school,
+                    Chandkheda - Ahmedabad 382424
                   </p>
                   <p></p>
                   <p></p>
@@ -258,7 +258,7 @@ const Footer = () => {
               </a>
             </div>
             <div class="copy-right-text">
-              © 2021 Online Gadget Store | All rights reserved
+              © 2021 ShopWorks | All rights reserved
             </div>
           </div>
         </div> */}
@@ -343,7 +343,7 @@ const Footer = () => {
               </a>
             </div>
             <div class="copy-right-text">
-              © 2024 Online Gadget Store | All rights reserved
+              © 2024 ShopWorks | All rights reserved
             </div>
           </div>
         </div>

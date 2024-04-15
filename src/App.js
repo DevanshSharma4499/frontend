@@ -21,6 +21,7 @@ import Logout from "./pages/Authentication/Logout";
 import ScrollToTop from "./Components/ScrollToTop";
 import SubCategoryP from "./Components/Categories/SubCategoryP";
 import Knowledge from "./Components/Knowledge-Center/Knowledge";
+import PageNotFound from "./pages/NotFound";
 
 
 
@@ -47,6 +48,7 @@ function App() {
           <Route path="register" element={<Register />} />
           <Route path="forgatpassword" element={<ForgatPassword />} />
           <Route path="knowledge" element={<Knowledge />} />
+          <Route path="*" element={<PageNotFound />} />
         
         
         </Route>

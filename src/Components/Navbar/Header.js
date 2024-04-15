@@ -6,13 +6,13 @@ import { Fragment, useState } from "react";
 import { useContext } from "react";
 // import { Context } from "react";
 import Search from "../Search";
-import { Dialog, Disclosure, Popover, Menu, Tab,Transition, } from "@headlessui/react";
+import { Dialog, Disclosure, Popover, Menu, Tab, Transition, } from "@headlessui/react";
 
 import { userData } from "../../helper";
 // import Cart from "../Cart/Cart";
 import { useSelector } from "react-redux";
 
-import { Bars3Icon, MagnifyingGlassIcon, ShoppingBagIcon, XMarkIcon,ChevronDownIcon } from "@heroicons/react/24/outline";
+import { Bars3Icon, MagnifyingGlassIcon, ShoppingBagIcon, XMarkIcon, ChevronDownIcon } from "@heroicons/react/24/outline";
 
 const navigation = {
   categories: [
@@ -149,25 +149,25 @@ function classNames(...classes) {
 }
 
 export default function Header() {
-    const {username} =userData();
+  const { username } = userData();
   // const [{ basket }, dispatch] = useStateValue();
   // const { cartCount } = useContext(Context);
   const [show, setShow] = useState(false);
   const [showCart, setshowCart] = useState(false);
   const [searchModal, setSearchModal] = useState(false);
-    const {jwt} = userData();
-    const isLoggedIn =!!jwt
+  const { jwt } = userData();
+  const isLoggedIn = !!jwt
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
 
 
-  const [open,setOpen] = useState(false)
+  const [open, setOpen] = useState(false)
   const products = useSelector((state) => state.cart.products);
 
 
   return (
     <>
-      <div className="bg-white z-10 sticky top-0">
+      <div className="bg-[#dff5ff] z-10 sticky top-0">
         {/* Mobile menu */}
 
         <Transition.Root show={open} as={Fragment}>
@@ -212,109 +212,14 @@ export default function Header() {
 
                   {/* Links */}
 
-                  <Tab.Group as="div" className="mt-2">
-                    <div className="border-b border-gray-200">
-                      <Tab.List className="-mb-px flex space-x-8 px-4">
-                        {navigation.categories.map((category) => (
-                          <Tab
-                            key={category.name}
-                            className={({ selected }) =>
-                              classNames(
-                                selected
-                                  ? "border-[#206c43] text-[#206c43]"
-                                  : "border-transparent text-gray-900",
-                                "flex-1 whitespace-nowrap border-b-2 px-1 py-4 text-base font-medium"
-                              )
-                            }
-                          >
-                            {category.name}
-                          </Tab>
-                        ))}
-                      </Tab.List>
-                    </div>
-                    <Tab.Panels as={Fragment}>
-                      {navigation.categories.map((category) => (
-                        <Tab.Panel
-                          key={category.name}
-                          className="space-y-10 px-4 pb-8 pt-10"
-                        >
-                          <div className="flex flex-row gap-4 mb-12 overflow-x-auto">
-                            {category.featured.map((item) => (
-                              <div
-                                key={item.name}
-                                className="group relative text-sm"
-                              >
-                                <div className="aspect-h-1 aspect-w-1 overflow-hidden rounded-lg bg-gray-100 group-hover:opacity-75">
-                                  <img
-                                    src={item.imageSrc}
-                                    alt={item.imageAlt}
-                                    className="object-cover object-center "
-                                  />
-                                </div>
 
-                                <NavLink
-                                  onClick={() => setOpen(false)}
-                                  to={item.NavLink}
-                                  className=" mt-2 mx-8 block font-medium text-gray-900 "
-                                >
-                                  <span
-                                    className="absolute inset-0 z-10"
-                                    aria-hidden="true"
-                                  />
-                                  {item.name}
-                                </NavLink>
-                                {/* <p aria-hidden="true" className="mt-1">
-                                Shop now
-                              </p> */}
-                              </div>
-                            ))}
-                          </div>
-                          <NavLink
-                            onClick={() => setOpen(false)}
-                            to="./"
-                            className="font-medium text-gray-900"
-                          >
-                            Home
-                          </NavLink>
-
-                          {category.sections.map((section) => (
-                            <div key={section.name}>
-                              <p
-                                id={`${category.id}-${section.id}-heading-mobile`}
-                                className="font-medium text-gray-900"
-                              >
-                                {section.name}
-                              </p>
-                              <ul
-                                role="list"
-                                aria-labelledby={`${category.id}-${section.id}-heading-mobile`}
-                                className="mt-6 flex flex-col space-y-6"
-                              >
-                                {section.items.map((item) => (
-                                  <li key={item.name} className="flow-root">
-                                    <NavLink
-                                      onClick={() => setOpen(false)}
-                                      href={item.NavLink}
-                                      className="-m-2 block p-2 text-gray-500"
-                                    >
-                                      {item.name}
-                                    </NavLink>
-                                  </li>
-                                ))}
-                              </ul>
-                            </div>
-                          ))}
-                        </Tab.Panel>
-                      ))}
-                    </Tab.Panels>
-                  </Tab.Group>
 
                   <div className="space-y-6 border-t border-gray-200 px-4 py-6">
                     {navigation.pages.map((page) => (
                       <div key={page.name} className="flow-root">
                         <a
                           href={page.href}
-                          className="-m-2 block p-2 font-medium text-gray-900"
+                          className="-m-2 block p-2 font-semibold text-gray-900"
                         >
                           {page.name}
                         </a>
@@ -326,7 +231,7 @@ export default function Header() {
                     <div className="flow-root">
                       <a
                         href="./singin"
-                        className="-m-2 block p-2 font-medium text-gray-900"
+                        className="-m-2 block p-2 font-semibold text-gray-900"
                       >
                         Sign in
                       </a>
@@ -334,7 +239,7 @@ export default function Header() {
                     <div className="flow-root">
                       <a
                         href="singup"
-                        className="-m-2 block p-2 font-medium text-gray-900"
+                        className="-m-2 block p-2 font-semibold text-gray-900"
                       >
                         Create account
                       </a>
@@ -348,7 +253,7 @@ export default function Header() {
                         alt=""
                         className="block h-auto w-5 flex-shrink-0"
                       />
-                      <span className="ml-3 block text-base font-medium text-gray-900">
+                      <span className="ml-3 block text-base font-semibold text-gray-900">
                         CAD
                       </span>
                       <span className="sr-only">, change currency</span>
@@ -360,20 +265,20 @@ export default function Header() {
           </Dialog>
         </Transition.Root>
 
-        <header className="relative bg-white">
-          <p className="flex h-10 items-center justify-center bg-[#26365b] px-4 text-sm font-medium text-white sm:px-6 lg:px-8">
+        <header className="relative bg-[#dff5ff]">
+          <p className="flex h-10 items-center justify-center bg-[#26365b]  text-lg font-semibold text-white sm:px-6 ">
             Welcome To Shopworks Portal
           </p>
 
           <nav
             aria-label="Top"
-            className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"
+            className="mx-auto max-w-full px-6 sm:px-6 lg:px-6 pb-[4px]"
           >
-            <div className="border-b border-gray-200">
-              <div className="flex h-16 items-center">
+            <div className="">
+              <div className="flex h-[75px] items-center">
                 <button
                   type="button"
-                  className="border-2  rounded-md bg-white p-2 text-black-600 lg:hidden focus:outline-0"
+                  className="border-2  rounded-md  bg-white p-2 text-black-600 lg:hidden focus:outline-0"
                   onClick={() => setOpen(true)}
                 >
                   <span className="sr-only">Open menu</span>
@@ -386,8 +291,8 @@ export default function Header() {
                     {/* <span className="sr-only">Your Company</span>
                     <h1 className="text-xl text-[#111]">Online Gadget Store</h1> */}
                     <img
-                      className="h-[60px] w-auto p-2"
-                      src="/images/logo-no-background.png"
+                      className="h-[80px] w-auto "
+                      src="/images/logo1.png"
                       alt=""
                       draggable="false"
                     />
@@ -397,25 +302,265 @@ export default function Header() {
                 {/* Flyout menus */}
                 <NavLink
                   to="./"
-                  className="pl-12 font-medium text-sm text-gray-700 imp"
+                  className="pl-12 font-semibold text-lg text-gray-700 imp"
                 >
                   Home
                 </NavLink>
                 <NavLink
                   to="./cartpage"
-                  className="pl-12 font-medium text-sm text-gray-700 imp"
+                  className="pl-12 font-semibold text-lg text-gray-700 imp"
                 >
-                  All Products
+                    <Menu as="div" className="relative inline-block text-left">
+                    <div>
+                      <Menu.Button className="inline-flex w-full justify-center gap-x-1.5 px-3 py-2 text-lg text-gray-700  ">
+                       Category
+                        <ChevronDownIcon className="-mr-1 mt-1 h-5 w-5 text-gray-400" aria-hidden="true" />
+                      </Menu.Button>
+                    </div>
+
+                    <Transition
+                      as={Fragment}
+                      enter="transition ease-out duration-100"
+                      enterFrom="transform opacity-0 scale-95"
+                      enterTo="transform opacity-100 scale-100"
+                      leave="transition ease-in duration-75"
+                      leaveFrom="transform opacity-100 scale-100"
+                      leaveTo="transform opacity-0 scale-95"
+                    >
+                      <Menu.Items className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                        <div className="py-1">
+                          <Menu.Item>
+                            {({ active }) => (
+                              <a
+                                href="#"
+                                className={classNames(
+                                  active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                                  'block px-4 py-2 text-sm'
+                                )}
+                              >
+                                Account settings
+                              </a>
+                            )}
+                          </Menu.Item>
+                          <Menu.Item>
+                            {({ active }) => (
+                              <a
+                                href="#"
+                                className={classNames(
+                                  active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                                  'block px-4 py-2 text-sm'
+                                )}
+                              >
+                                Support
+                              </a>
+                            )}
+                          </Menu.Item>
+                          <Menu.Item>
+                            {({ active }) => (
+                              <a
+                                href="#"
+                                className={classNames(
+                                  active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                                  'block px-4 py-2 text-sm'
+                                )}
+                              >
+                                License
+                              </a>
+                            )}
+                          </Menu.Item>
+                          <form method="POST" action="#">
+                            <Menu.Item>
+                              {({ active }) => (
+                                <button
+                                  type="submit"
+                                  className={classNames(
+                                    active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                                    'block w-full px-4 py-2 text-left text-sm'
+                                  )}
+                                >
+                                  Sign out
+                                </button>
+                              )}
+                            </Menu.Item>
+                          </form>
+                        </div>
+                      </Menu.Items>
+                    </Transition>
+                  </Menu>
+                </NavLink>
+                <NavLink
+                  to="./cartpage"
+                  className="pl-12 font-semibold text-lg text-gray-700 imp"
+                >
+                  <Menu as="div" className="relative inline-block text-left">
+                    <div>
+                      <Menu.Button className="inline-flex w-full justify-center gap-x-1.5 px-3 py-2 text-lg text-gray-700  ">
+                        Products
+                        <ChevronDownIcon className="-mr-1 mt-1 h-5 w-5 text-gray-400" aria-hidden="true" />
+                      </Menu.Button>
+                    </div>
+
+                    <Transition
+                      as={Fragment}
+                      enter="transition ease-out duration-100"
+                      enterFrom="transform opacity-0 scale-95"
+                      enterTo="transform opacity-100 scale-100"
+                      leave="transition ease-in duration-75"
+                      leaveFrom="transform opacity-100 scale-100"
+                      leaveTo="transform opacity-0 scale-95"
+                    >
+                      <Menu.Items className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                        <div className="py-1">
+                          <Menu.Item>
+                            {({ active }) => (
+                              <a
+                                href="#"
+                                className={classNames(
+                                  active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                                  'block px-4 py-2 text-sm'
+                                )}
+                              >
+                                Account settings
+                              </a>
+                            )}
+                          </Menu.Item>
+                          <Menu.Item>
+                            {({ active }) => (
+                              <a
+                                href="#"
+                                className={classNames(
+                                  active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                                  'block px-4 py-2 text-sm'
+                                )}
+                              >
+                                Support
+                              </a>
+                            )}
+                          </Menu.Item>
+                          <Menu.Item>
+                            {({ active }) => (
+                              <a
+                                href="#"
+                                className={classNames(
+                                  active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                                  'block px-4 py-2 text-sm'
+                                )}
+                              >
+                                License
+                              </a>
+                            )}
+                          </Menu.Item>
+                          <form method="POST" action="#">
+                            <Menu.Item>
+                              {({ active }) => (
+                                <button
+                                  type="submit"
+                                  className={classNames(
+                                    active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                                    'block w-full px-4 py-2 text-left text-sm'
+                                  )}
+                                >
+                                  Sign out
+                                </button>
+                              )}
+                            </Menu.Item>
+                          </form>
+                        </div>
+                      </Menu.Items>
+                    </Transition>
+                  </Menu>
+                </NavLink>
+                <NavLink
+                  to="./cartpage"
+                  className="pl-12 font-semibold text-lg text-gray-700 imp"
+                >
+                    <Menu as="div" className="relative inline-block text-left">
+                    <div>
+                      <Menu.Button className="inline-flex w-full justify-center gap-x-1.5 px-3 py-2 text-lg text-gray-700  ">
+                        Stores
+                        <ChevronDownIcon className="-mr-1 mt-1 h-5 w-5 text-gray-400" aria-hidden="true" />
+                      </Menu.Button>
+                    </div>
+
+                    <Transition
+                      as={Fragment}
+                      enter="transition ease-out duration-100"
+                      enterFrom="transform opacity-0 scale-95"
+                      enterTo="transform opacity-100 scale-100"
+                      leave="transition ease-in duration-75"
+                      leaveFrom="transform opacity-100 scale-100"
+                      leaveTo="transform opacity-0 scale-95"
+                    >
+                      <Menu.Items className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                        <div className="py-1">
+                          <Menu.Item>
+                            {({ active }) => (
+                              <a
+                                href="#"
+                                className={classNames(
+                                  active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                                  'block px-4 py-2 text-sm'
+                                )}
+                              >
+                                Account settings
+                              </a>
+                            )}
+                          </Menu.Item>
+                          <Menu.Item>
+                            {({ active }) => (
+                              <a
+                                href="#"
+                                className={classNames(
+                                  active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                                  'block px-4 py-2 text-sm'
+                                )}
+                              >
+                                Support
+                              </a>
+                            )}
+                          </Menu.Item>
+                          <Menu.Item>
+                            {({ active }) => (
+                              <a
+                                href="#"
+                                className={classNames(
+                                  active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                                  'block px-4 py-2 text-sm'
+                                )}
+                              >
+                                License
+                              </a>
+                            )}
+                          </Menu.Item>
+                          <form method="POST" action="#">
+                            <Menu.Item>
+                              {({ active }) => (
+                                <button
+                                  type="submit"
+                                  className={classNames(
+                                    active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                                    'block w-full px-4 py-2 text-left text-sm'
+                                  )}
+                                >
+                                  Sign out
+                                </button>
+                              )}
+                            </Menu.Item>
+                          </form>
+                        </div>
+                      </Menu.Items>
+                    </Transition>
+                  </Menu>
                 </NavLink>
                 <NavLink
                   to="./EmblaCarousel"
-                  className="pl-12 font-medium text-sm text-gray-700 imp"
+                  className="pl-12 font-semibold text-lg text-gray-700 imp"
                 >
                   Contact Us
                 </NavLink>
                 {/* <NavLink
                   to="./about"
-                  className="pl-12 font-medium text-sm text-gray-700 imp"
+                  className="pl-12 font-semibold text-lg text-gray-700 imp"
                 >
                   About Us
                 </NavLink> */}
@@ -431,7 +576,7 @@ export default function Header() {
                                   open
                                     ? "border-[#206c43] text-[#206c43]"
                                     : "border-transparent text-gray-700 hover:text-gray-800",
-                                  "relative z-10 -mb-px flex items-center border-b-2 pt-px text-sm font-medium transition-colors duration-200 ease-out"
+                                  "relative z-10 -mb-px flex items-center border-b-2 pt-px text-lg font-semibold transition-colors duration-200 ease-out"
                                 )}
                               >
                                 {category.name}
@@ -447,7 +592,7 @@ export default function Header() {
                               leaveFrom="opacity-100"
                               leaveTo="opacity-0"
                             >
-                              <Popover.Panel className="absolute inset-x-0 top-full text-sm text-gray-500">
+                              <Popover.Panel className="absolute inset-x-0 top-full text-lg text-gray-500">
                                 
                                 <div
                                   className="absolute inset-0 top-1/2 bg-white shadow "
@@ -461,7 +606,7 @@ export default function Header() {
                                         {category.featured.map((item) => (
                                           <div
                                             key={item.name}
-                                            className="group relative text-base sm:text-sm"
+                                            className="group relative text-base sm:text-lg"
                                           >
                                             <div className="aspect-h-1 aspect-w-1 overflow-scroll rounded-lg bg-gray-100 group-hover:opacity-75 w-[150px]">
                                               <img
@@ -472,7 +617,7 @@ export default function Header() {
                                             </div>
                                             <a
                                               href={item.href}
-                                              className="mt-2  block font-medium text-gray-900"
+                                              className="mt-2  block font-semibold text-gray-900"
                                             >
                                               <span
                                                 className="absolute inset-0 z-10"
@@ -489,12 +634,12 @@ export default function Header() {
                                           </div>
                                         ))}
                                       </div>
-                                      <div className="row-start-1 grid grid-cols-3 gap-x-8 gap-y-10 text-sm">
+                                      <div className="row-start-1 grid grid-cols-3 gap-x-8 gap-y-10 text-lg">
                                         {category.sections.map((section) => (
                                           <div key={section.name}>
                                             <p
                                               id={`${section.name}-heading`}
-                                              className="font-medium text-gray-900"
+                                              className="font-semibold text-gray-900"
                                             >
                                               {section.name}
                                             </p>
@@ -534,7 +679,7 @@ export default function Header() {
                       <NavLink
                         key={page.name}
                         to={page.NavLink}
-                        className="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800"
+                        className="flex items-center text-lg font-semibold text-gray-700 hover:text-gray-800"
                       >
                         {page.name}
                       </NavLink>
@@ -559,18 +704,18 @@ export default function Header() {
 
                   {/* end search */}
                   <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
-                     {isLoggedIn ? ( 
+                    {isLoggedIn ? (
                       <NavLink
                         to="./logout"
-                        className="text-sm font-medium text-gray-700 hover:text-gray-800"
+                        className="text-lg font-semibold text-gray-700 hover:text-gray-800"
                       >
                         Log out
                       </NavLink>
-                     ) : ( 
+                    ) : (
                       <>
                         <NavLink
                           to="./login"
-                          className="text-sm font-medium text-gray-700 hover:text-gray-800"
+                          className="text-lg font-semibold text-gray-700 hover:text-gray-800"
                         >
                           Log in
                         </NavLink>
@@ -580,125 +725,16 @@ export default function Header() {
                         />
                         <NavLink
                           to="./register"
-                          className="text-sm font-medium text-gray-700 hover:text-gray-800"
+                          className="text-lg font-semibold text-gray-700 hover:text-gray-800"
                         >
                           Create account
                         </NavLink>
                       </>
-                     )} 
+                    )}
                   </div>
 
                   <div className="hidden lg:ml-8 lg:flex">
-                    <Menu as="div" className="relative inline-block text-left">
-                      <div>
-                        <Menu.Button className="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-md text-gray-700 hover:bg-gray-50">
-                          {/* <img
-                        src="https://tailwindui.com/img/flags/flag-canada.svg"
-                        alt=""
-                        className="block h-auto w-5 flex-shrink-0"
-                      /> */}
-                          {/* <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            strokeWidth={1.5}
-                            stroke="currentColor"
-                            className="block h-auto w-5 flex-shrink-0"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              d="M10.5 21l5.25-11.25L21 21m-9-3h7.5M3 5.621a48.474 48.474 0 016-.371m0 0c1.12 0 2.233.038 3.334.114M9 5.25V3m3.334 2.364C11.176 10.658 7.69 15.08 3 17.502m9.334-12.138c.896.061 1.785.147 2.666.257m-4.589 8.495a18.023 18.023 0 01-3.827-5.802"
-                            />
-                          </svg> */}
 
-                          <span className="ml-3 block text-sm font-medium">
-                            Quick Links
-                          </span>
-                          <ChevronDownIcon
-                            className="mr-1 mt-[1px] h-5 w-5 text-gray-600"
-                            aria-hidden="true"
-                          />
-                        </Menu.Button>
-                      </div>
-
-                      <Transition
-                        as={Fragment}
-                        enter="transition ease-out duration-100"
-                        enterFrom="transform opacity-0 scale-95"
-                        enterTo="transform opacity-100 scale-100"
-                        leave="transition ease-in duration-75"
-                        leaveFrom="transform opacity-100 scale-100"
-                        leaveTo="transform opacity-0 scale-95"
-                      >
-                        <Menu.Items className="absolute right-0 z-10 mt-5 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none ">
-                          <div className="py-1">
-                            <Menu.Item>
-                              {({ active }) => (
-                                <a
-                                  href="#"
-                                  className={classNames(
-                                    active
-                                      ? "bg-gray-100 text-gray-900"
-                                      : "text-gray-700",
-                                    "block px-4 py-2 text-sm"
-                                  )}
-                                >
-                                  Terms & Conditions
-                                </a>
-                              )}
-                            </Menu.Item>
-                            <Menu.Item>
-                              {({ active }) => (
-                                <a
-                                  href="#"
-                                  className={classNames(
-                                    active
-                                      ? "bg-gray-100 text-gray-900"
-                                      : "text-gray-700",
-                                    "block px-4 py-2 text-sm"
-                                  )}
-                                >
-                                  Privacy Policy
-                                </a>
-                              )}
-                            </Menu.Item>
-                            <Menu.Item>
-                              {({ active }) => (
-                                <a
-                                  href="#"
-                                  className={classNames(
-                                    active
-                                      ? "bg-gray-100 text-gray-900"
-                                      : "text-gray-700",
-                                    "block px-4 py-2 text-sm"
-                                  )}
-                                >
-                                  Refund & Cancellation policy
-                                </a>
-                              )}
-                            </Menu.Item>
-                            <form method="POST" action="#">
-                              <Menu.Item>
-                                {({ active }) => (
-                                  <button
-                                    type="submit"
-                                    className={classNames(
-                                      active
-                                        ? "bg-gray-100 text-gray-900"
-                                        : "text-gray-700",
-                                      "block w-full px-4 py-2 text-left text-sm"
-                                    )}
-                                  >
-                                    Sign out
-                                  </button>
-                                )}
-                              </Menu.Item>
-                            </form>
-                          </div>
-                        </Menu.Items>
-                      </Transition>
-                    </Menu>
                     {/* <a
                       href="#"
                       className="flex items-center text-gray-700 hover:text-gray-800"
@@ -708,7 +744,7 @@ export default function Header() {
                         alt=""
                         className="block h-auto w-5 flex-shrink-0"
                       />
-                      <span className="ml-3 block text-sm font-medium">
+                      <span className="ml-3 block text-lg font-semibold">
                         CAD
                       </span>
                       <span className="sr-only">, change currency</span>
@@ -742,8 +778,8 @@ export default function Header() {
                           className="h-6 w-6 flex-shrink-0 text-gray-600 group-hover:text-[#206c43]"
                           aria-hidden="true"
                         />
-                        <span className="ml-2 text-sm font-medium text-gray group-hover:text-[#206c43]">
-                        {products.length}
+                        <span className="ml-2 text-lg font-semibold text-gray group-hover:text-[#206c43]">
+                          {products.length}
                         </span>
                         <span className="sr-only">items in cart, view bag</span>
                       </div>
@@ -769,150 +805,17 @@ export default function Header() {
                     </NavLink>
                   </div>
                   {/*  */}
-                  <Menu as="div" className="relative inline-block text-left display">
-                    <div>
-                      <Menu.Button className="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900  hover:bg-gray-50">
-                        Profile
-                        <ChevronDownIcon
-                          className="-mr-1 h-5 w-5 text-gray-400"
-                          aria-hidden="true"
-                        />
-                      </Menu.Button>
-                    </div>
 
-                    <Transition
-                      as={Fragment}
-                      enter="transition ease-out duration-100"
-                      enterFrom="transform opacity-0 scale-95"
-                      enterTo="transform opacity-100 scale-100"
-                      leave="transition ease-in duration-75"
-                      leaveFrom="transform opacity-100 scale-100"
-                      leaveTo="transform opacity-0 scale-95"
-                    >
-                      <Menu.Items className="absolute right-0 z-10 mt-2 w-[260px] origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-                        <div className="py-1">
-                          <Menu.Item>
-                            {({ active }) => (
-                              <a
-                                href="#"
-                                className={classNames(
-                                  active
-                                    ? "bg-gray-100 text-gray-900"
-                                    : "text-gray-700",
-                                  "block px-4 py-2 text-sm"
-                                )}
-                              >
-                                Welcome! {username}
-                                
-                              </a>
-                            )}
-                          </Menu.Item>
-                          <Menu.Item>
-                            {({ active }) => (
-                              <a
-                                href="#"
-                                className={classNames(
-                                  active
-                                    ? "bg-gray-100 text-gray-900"
-                                    : "text-gray-700",
-                                  "block px-4 py-2 text-[12px]"
-                                )}
-                              ></a>
-                            )}
-                          </Menu.Item>
-                        </div>
-                        <div className="py-1">
-                          <Menu.Item>
-                            {({ active }) => (
-                              <a
-                                href="./Idce"
-                                className={classNames(
-                                  active
-                                    ? "bg-gray-100 text-gray-900"
-                                    : "text-gray-700",
-                                  "block px-4 py-2 text-sm"
-                                )}
-                              >
-                                Archive
-                              </a>
-                            )}
-                          </Menu.Item>
-                          <Menu.Item>
-                            {({ active }) => (
-                              <a
-                                href="./swiper"
-                                className={classNames(
-                                  active
-                                    ? "bg-gray-100 text-gray-900"
-                                    : "text-gray-700",
-                                  "block px-4 py-2 text-sm"
-                                )}
-                              >
-                                Move
-                              </a>
-                            )}
-                          </Menu.Item>
-                        </div>
-                        <div className="py-1">
-                          <Menu.Item>
-                            {({ active }) => (
-                              <a
-                                href="./Thums"
-                                className={classNames(
-                                  active
-                                    ? "bg-gray-100 text-gray-900"
-                                    : "text-gray-700",
-                                  "block px-4 py-2 text-sm"
-                                )}
-                              >
-                                Share
-                              </a>
-                            )}
-                          </Menu.Item>
-                          <Menu.Item>
-                            {({ active }) => (
-                              <a
-                                href="./"
-                                className={classNames(
-                                  active
-                                    ? "bg-gray-100 text-gray-900"
-                                    : "text-gray-700",
-                                  "block px-4 py-2 text-sm"
-                                )}
-                              >
-                                Add to favorites
-                              </a>
-                            )}
-                          </Menu.Item>
-                        </div>
-                        <div className="py-1">
-                          <Menu.Item>
-                            {({ active }) => (
-                              <a
-                                href="#"
-                                className={classNames(
-                                  active
-                                    ? "bg-gray-100 text-gray-900"
-                                    : "text-gray-700",
-                                  "block px-4 py-2 text-sm"
-                                )}
-                              >
-                                Edit Profile
-                              </a>
-                            )}
-                          </Menu.Item>
-                        </div>
-                      </Menu.Items>
-                    </Transition>
-                  </Menu>
                 </div>
               </div>
             </div>
+            <div className=" border-[3px]  border-[#111] rounded-xl"></div>
+
           </nav>
         </header>
       </div>
-        {showCart && <Cart setshowCart={setshowCart} />} 
-      {searchModal && <Search setSearchModal={setSearchModal} />} 
+      {showCart && <Cart setshowCart={setshowCart} />}
+      {searchModal && <Search setSearchModal={setSearchModal} />}
     </>
   );
 }

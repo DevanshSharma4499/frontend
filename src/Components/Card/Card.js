@@ -14,141 +14,66 @@ const Card = ({ item }) => {
   return (
     <>
       {/* <div className="grid xl:grid-cols-4 gap-3 pl-6 pt-6 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 overflow-scroll"> */}
-        
-          <div class="max-w-[280px] mb-12  bg-white border border-gray-200 rounded-[20px] shadow  ">
-          <Link className="link" to={`/product/${item.id}`}>
-            <div className="w-full overflow-hidden bg-cover bg-no-repeat rounded-t-[20px]">
-            <img
-                class=" h-[220px] w-full transition duration-300 ease-in-out hover:scale-110  "
-                // src={
-                //   "http://localhost:1337" +
-                //   item.attributes?.img?.data?.attributes?.url
-                // }
-                src={item.attributes.img.data[0].attributes.url}
-                alt=""
-                draggable="false"
-              />
-            </div>
-             
-            </Link>
-            <div class="px-5 pt-5 hight-[265px]">
-              <a href="#">
-                <h5 class="mb-2 text-lg  font-semibold  text-gray-900 dark:text-white">
-                  {item?.attributes.title}
-                </h5>
-              </a>
-              <li class="list-none flex font-[300] ">
-                <span className="font-lg">4.6</span>
 
-                <img
-                  class="h-[16px] w-[16px]  ml-1"
-                  src="https://cdn.shopify.com/s/files/1/0575/8920/3125/files/reviewstar.png?v=1629806756"
-                  alt="Vigyanveda Review Star"
-                />{" "}
-                <span className="pl-10">11000+ People Using</span>
-              </li>
-              {/* <li class="list-none flex font-[300] mt-1 "><span className="font-semibold text-lg">₹</span><h5 className="mt-[1px] pl-1 font-semibold text-lg">5000</h5>
-          <span className="font-semibold text-slate-500 text-lg mt-[6px] ml-8 leading-tight line-through">₹</span>
-          <h5 className="mt-1 pl-1 font-semibold text-lg  text-slate-500 line-through  ">8000</h5></li> */}
-              <li className="list-none flex">
-                <h6 className="font-semibold text-lg py-1 mb-0">
-                  ₹{item?.attributes.price}
-                </h6>
-                <h6 className="font-small text-lg py-1 mb-0 line-through pl-4 text-gray-500">
-                  ₹{item.oldPrice || item?.attributes.price + 20}
-                </h6>
-              </li>
 
-              {/* <li className="flex list-none">
-                <span className="font-light text-[14px] text-green-800">
-                  Care For
-                </span>
-                <h6 className="text-[14px] font-light mt-[2px] pl-2 mb-4">
-                  Gas, Acidity, Constipation
-                </h6>
-              </li> */}
+
+      <div class="relative m-10 flex w-full max-w-xs flex-col overflow-hidden rounded-lg border border-gray-100 bg-[#fdf4ed] shadow-md">
+        <Link class="relative mx-3 mt-3 flex h-60 overflow-hidden rounded-xl" to={`/product/${item.id}`}>
+          <img class="object-cover zoom-img" src={item.attributes?.img?.data[0]?.attributes?.url} alt="product image" />
+          <span class="absolute top-0 left-0 m-2 rounded-full bg-black px-2 text-center text-sm font-medium text-white">{item?.attributes?.type}</span>
+        </Link>
+        <div class="mt-4 px-5 pb-5">
+          <a href="#">
+            <h5 class="text-xl font-bold tracking-tight text-slate-900"> {item?.attributes?.title}</h5>
+          </a>
+          <div class="mt-2 mb-5 flex items-center justify-between">
+            <p>
+              <span class="text-3xl font-bold text-slate-900"> ₹{item?.attributes.price}</span>
+              <span class="text-sm text-slate-900 line-through">  ₹{item.oldPrice || item?.attributes.price + 20}</span>
+            </p>
+            <div class="flex items-center">
+              <svg aria-hidden="true" class="h-5 w-5 text-yellow-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+              </svg>
+              <svg aria-hidden="true" class="h-5 w-5 text-yellow-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+              </svg>
+              <svg aria-hidden="true" class="h-5 w-5 text-yellow-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+              </svg>
+              <svg aria-hidden="true" class="h-5 w-5 text-yellow-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+              </svg>
+              <svg aria-hidden="true" class="h-5 w-5 text-yellow-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+              </svg>
+              <span class="mr-2 ml-3 rounded bg-yellow-200 px-2.5 py-0.5 text-xs font-semibold">5.0</span>
             </div>
-            <li className="list-none flex ">
-              <button className="w-[50%] bg-[#206c43] py-[10px] rounded-bl-[19px] mr-[1px] text-white font-semibold">
-                Know More
-              </button>
-              <button
-                className="bg-[#134933] py-[10px] w-[50%] rounded-br-[19px] text-white font-semibold"
-                onClick={() =>
-                  dispatch(
-                    addToCart({
-                      id: item.id,
-                      title: item.attributes.title,
-                      desc: item.attributes.desc,
-                      price: item.attributes.price,
-                      img: item.attributes.img.data.attributes.url,
-                      quantity,
-                    })
-                  ) 
-                  &&
-                  toast.success(
-                    `${item.attributes.title.substring(0, 15)} added successfully!`
-                  )
-                }
-              >
-                Add To Cart
-              </button>
-            </li>
           </div>
-     
-      {/* </div> */}
-
-      {/* <Link className="link" to={`/product/${item.id}`}>
-      <div className="card">
-        <div className="image">
-          {item?.attributes.isNew && <span>New Season</span>}
-          <img
-            src={
-              'http://localhost:1337' + item.attributes?.img?.data?.attributes?.url
-            }
-            alt=""
-            className="mainImg"
-          />
-          <img
-            src={
-              'http://localhost:1337' + item.attributes?.img2?.data[0]?.attributes?.url
-            }
-            alt=""
-            className="secondImg"
-          />
+          <div onClick={() =>
+            dispatch(
+              addToCart({
+                id: item.id,
+                title: item.attributes.title,
+                desc: item.attributes.desc,
+                price: item.attributes.price,
+                img: item.attributes.img.data[0].attributes.url,
+                quantity,
+              })
+            )
+            &&
+            toast.success(
+              `${item.attributes.title.substring(0, 15)} added successfully!`
+            )
+          } class="flex items-center justify-center rounded-md bg-[#26365b] px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-300">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+            </svg>
+            Add to cart</div
+          >
         </div>
-        <h2>{item?.attributes.title}</h2>
-        
-        <div className="prices">
-          <h3>₹{item.oldPrice || item?.attributes.price + 20}</h3>
-          <h3>₹{item?.attributes.price}</h3>
-          <div className="border-[1px] border-orange-600 py-1 px-4 rounded-full text-xs">
-            
-            </div>
-        </div>
-       
       </div>
-      
-    </Link> */}
 
-      {/* <button className="absolute"
-  onClick={() =>
-    dispatch(
-      addToCart({
-        id: item.id,
-        title: item.attributes.title,
-        desc: item.attributes.desc,
-        price: item.attributes.price,
-        img: item.attributes.img.data.attributes.url,
-        quantity,
-       
-      })
-    )&&
-    toast.success(
-      `${item.title.substring(0, 15)} added successfully!`
-    )
-  }>Add to Cart
-</button> */}
     </>
   );
 };

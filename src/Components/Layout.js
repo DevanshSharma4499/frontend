@@ -30,8 +30,8 @@ const Layout = () => {
         headerIconColor="pink"
         headerTxtColor="white"
         headerBgColor="#206c43"
-        headerTitle="Online Gadget Store"
-        headerCaption="Welcome To Online Gadget Store"
+        headerTitle="Shopwroks"
+        headerCaption="Welcome To Shopwroks"
         bodyBgColor=""
         chatPersonName="Support"
         chatMessage={

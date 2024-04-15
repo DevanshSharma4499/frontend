@@ -18,11 +18,11 @@ const Dcategory = () => {
             <article
               key={item.id}
               onClick={() => navigate(`/category/${item.id}`)}
-              class="relative p-4 w-full bg-white rounded-lg overflow-hidden shadow-md flex flex-col justify-center items-center "
+              class="relative p-4 w-full bg-[#fdf4ed] rounded-lg overflow-hidden shadow-md flex flex-col justify-center items-center "
             >
               <div class="aspect-square overflow-hidden w-full h-full rounded-lg">
                 <img
-                  class="group-hover:scale-125 h-full w-full object-cover transition-all duration-300 bg-white"
+                  class="group-hover:scale-125 h-full w-full object-cover transition-all duration-300 "
                   // src={
                   //   " http://localhost:1337" +
                   //   item?.attributes?.img?.data[0]?.attributes?.url

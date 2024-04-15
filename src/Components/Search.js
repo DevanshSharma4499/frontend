@@ -59,8 +59,8 @@ const Search = ({ setSearchModal }) => {
                 <div className="image-container">
                   <img
                     src={
-                        'http://localhost:1337' +
-                        item.attributes?.img?.data?.attributes?.url
+                        // 'http://localhost:1337' +
+                        item.attributes?.img?.data[0]?.attributes?.url
                       }
                     alt="Front of satchel with blue canvas body, black straps and handle, drawstring top, and front zipper pouch."
                     class="h-full w-full object-cover object-center rounded-md"

@@ -12,7 +12,7 @@ import { BsCartX } from "react-icons/bs";
 import Lottie, { LottieRefCurrentProps } from "lottie-react";
 import { Link } from "react-router-dom";
 import { useRef } from "react";
-import animationData from "../../assets/amimi.json";
+import animationData from "../../assets/cart.json";
 import { useDispatch } from "react-redux";
 import { makeRequest } from "../../makeRequest";
 import { loadStripe } from "@stripe/stripe-js";
