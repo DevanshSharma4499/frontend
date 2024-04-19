@@ -15,6 +15,7 @@ import "./styles.css";
 // import required modules
 import { FreeMode, Pagination, Autoplay } from "swiper/modules";
 import Dcategory from "../Components/Dcategory";
+import { Banner } from "../Components/Banner";
 // import SubCategory from "../Components/Categories/SubCategory";
 
 const Home = () => {
@@ -25,73 +26,85 @@ const Home = () => {
   return (
     <div className="">
       {" "}
-    <section className="pt-10 overflow-hidden bg-[#dff5ff] md:pt-0 sm:pt-16 2xl:pt-12 home_image h-screen">
-      <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
-        <div className="grid items-center grid-cols-1 md:grid-cols-2">
-          <div className="mt-12">
-            <h1 className="text-4xl  font-bold leading-snug text-[#000000] sm:text-4xl lg:text-5xl xl:text-6xl xl:leading-snug">
-              Shopworks&nbsp;<span>Commonstore</span>{" "}
-              <br className="block sm:hidden" />
-              <span>Online Shop</span>&nbsp;&nbsp;For All
-            </h1>
-            <p className="max-w-lg mt-3 text-md leading-relaxed text-gray-700 md:mt-8 pb-6">
-              Browse and Buy
-            </p>
-            <a
-              href=""
-              className=" home-banner-btn text-small text-white border rounded-md bg-[#5da1cb] p-3"
-            >
-              Buy locally sold Products!!
-            </a>
-          </div>
+      {/* <section class="pt-10 overflow-hidden bg-gray-50 md:pt-0 sm:pt-16 2xl:pt-16 my-12">
+        <div class="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
+          <div class="grid items-center grid-cols-1 md:grid-cols-2">
+            <div>
+              <h2 class="text-3xl font-bold leading-tight text-black sm:text-4xl lg:text-5xl">Hey 👋 I am <br class="block sm:hidden" />Jenny Carter</h2>
+              <p class="max-w-lg mt-3 text-xl leading-relaxed text-gray-600 md:mt-8">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
 
-          <div className="relative">
-            {/* <img
-              className="absolute inset-x-0 bottom-0 -mb-48 -translate-x-1/2 left-1/2"
-              src="https://cdn.rareblocks.xyz/collection/celebration/images/team/1/blob-shape.svg"
-              alt=""
-              draggable="false"
-            /> */}
+              <p class="mt-4 text-xl text-gray-600 md:mt-8">
+                <span class="relative inline-block">
+                  <span class="absolute inline-block w-full bottom-0.5 h-2 bg-yellow-300"></span>
+                  <span class="relative"> Have a question? </span>
+                </span>
+                <br class="block sm:hidden" />Ask me on <a href="#" title="" class="transition-all duration-200 text-sky-500 hover:text-sky-600 hover:underline">Twitter</a>
+              </p>
+            </div>
 
-            {/* <img
-              className="relative w-full xl:max-w-lg xl:mx-auto 2xl:origin-bottom 2xl:scale-110"
-              src="https://www.bigbasket.com/media/uploads/banner_images/B2C022308704-16155-460-DT-all-cm-290224.jpg?tr=w-3840,q=80"
-              alt=''
-              draggable="false"
-            /> */}
+            <div class="relative">
+              <img class="absolute inset-x-0 bottom-0 -mb-48 -translate-x-1/2 left-1/2" src="" alt="" />
+
+              <img class="relative w-full xl:max-w-lg xl:mx-auto 2xl:origin-bottom 2xl:scale-110" src="../../public/images/banner.png" alt="" />
+            </div>
           </div>
         </div>
+      </section> */}
+      <Banner/>
+      <div class="bg-white py-6 sm:py-8 lg:py-12">
+  <div class="mx-auto max-w-screen-2xl px-4 md:px-8">
+    <div class="flex flex-col overflow-hidden rounded-lg bg-gray-200 sm:flex-row md:h-80">
+     
+      <div class="order-first h-48 w-full bg-gray-300 sm:order-none sm:h-auto sm:w-1/2 lg:w-2/5">
+        <img src="/images/undraw.svg" loading="lazy" alt="Photo by Andras Vas" class="h-full w-full object-cover object-center" />
       </div>
-    </section>
-    <div
+    
 
-className={`relative rounded-lg overflow-hidden cursor-pointer transition duration-300 ease-in-out ${hovered ? 'scale-105' : 'scale-100'}`}
+     
+      <div class="flex w-full flex-col p-4 sm:w-1/2 sm:p-8 lg:w-3/5">
+        <h2 class="mb-4 text-xl font-bold text-gray-800 md:text-2xl lg:text-4xl">Help center</h2>
 
-onMouseEnter={() => setHovered(true)}
+        <p class="mb-8 max-w-md text-gray-600">This is a section of some simple filler text, also known as placeholder text. It shares some characteristics of a real written text.</p>
 
-onMouseLeave={() => setHovered(false)}
-
->
-
-<img
-
-  className="w-full h-48 object-cover"
-
-  src="https://source.unsplash.com/random/800x600"
-
-  alt="Home Card"
-
-/>
-
-<div className="absolute inset-0 bg-gradient-to-b from-transparent to-gray-800 opacity-50"></div>
-
-<div className="absolute inset-0 flex items-center justify-center text-white">
-
-  <div className="text-xl font-medium">Home Card</div>
-
+        <div class="mt-auto">
+          <a href="http://wa.me/919624226677" class="inline-block rounded-lg bg-white px-8 py-3 text-center text-sm font-semibold text-gray-800 outline-none ring-indigo-300 transition duration-100 hover:bg-gray-100 focus-visible:ring active:bg-gray-200 md:text-base">Contact support</a>
+        </div>
+      </div>
+    
+    </div>
+  </div>
 </div>
+      
 
-</div>
+      {/* <div
+
+        className={`relative rounded-lg overflow-hidden cursor-pointer transition duration-300 ease-in-out ${hovered ? 'scale-105' : 'scale-100'}`}
+
+        onMouseEnter={() => setHovered(true)}
+
+        onMouseLeave={() => setHovered(false)}
+
+      >
+
+        <img
+
+          className="w-full h-48 object-cover"
+
+          src="https://source.unsplash.com/random/800x600"
+
+          alt="Home Card"
+
+        />
+
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-gray-800 opacity-50"></div>
+
+        <div className="absolute inset-0 flex items-center justify-center text-white">
+
+          <div className="text-xl font-medium">Home Card</div>
+
+        </div>
+
+      </div> */}
       {/* <section className="bg-white m-4">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-0 pt-4 flex justify-between items-center">
           <div className="space-y-6">
@@ -124,7 +137,7 @@ onMouseLeave={() => setHovered(false)}
           </div>
         </div>
       </section> */}
-     
+
 
       {/* <div class="bg-[#f3f4f6] p-5">
         <div class="grid xl:grid-cols-2 gap-8 sm:grid-cols-1 ">
@@ -477,7 +490,7 @@ onMouseLeave={() => setHovered(false)}
           </div>
         </div>
       </section> */}
-     
+
     </div>
   );
 };

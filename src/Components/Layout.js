@@ -15,18 +15,18 @@ const Layout = () => {
       <ToastContainer />
       <Toaster position='top-center' />
       <WhatsAppWidget
-        phoneNo="918490059352"
+        phoneNo="919624226677"
         position="right"
         widgetWidth="300px"
         widgetWidthMobile="300px"
-        autoOpen={true}
+        autoOpen={false}
         autoOpenTimer={5000}
-        messageBox={true}
+        messageBox={false}
         messageBoxTxt=""
         iconSize="50"
         iconColor="white"
         iconBgColor="#206c43"
-        headerIcon="./images/rntalhub.jpg"
+        headerIcon="./images/only-logo-no-background.png"
         headerIconColor="pink"
         headerTxtColor="white"
         headerBgColor="#206c43"
@@ -36,7 +36,7 @@ const Layout = () => {
         chatPersonName="Support"
         chatMessage={
           <>
-            Hi there 👋
+            Hello 👋
             <br />
             How can I help you?
           </>

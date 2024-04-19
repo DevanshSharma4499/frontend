@@ -78,7 +78,7 @@ const Footer = () => {
                             "
                 >
                   <li className="site-footer__linklist-item">
-                    <a href="/pages/about-us">About Us</a>
+                    <a href="/about">About Us</a>
                   </li>
                   <li className="site-footer__linklist-item">
                     <a href="/pages/contact-us">Contact Us</a>
@@ -93,34 +93,34 @@ const Footer = () => {
                     "
             >
               <div className="site-footer__item-inner site-footer__item-inner--link_list">
-                <p className="h4">Top Gadgets</p>
+                <p className="h4">Top Products</p>
                 <ul
                   className="site-footer__linklist
                             "
                 >
                   <li className="site-footer__linklist-item">
-                    <a href="/products">Item 1</a>
+                    <a href="/products">Iphone</a>
                   </li>
                   <li className="site-footer__linklist-item">
-                    <a href="/products">Item 2</a>
+                    <a href="/products">Amul Cheese</a>
                   </li>
                   <li className="site-footer__linklist-item">
-                    <a href="/products">Item 1</a>
+                    <a href="/products">HP laptop</a>
                   </li>
                   <li className="site-footer__linklist-item">
-                    <a href="/products">Item 3</a>
+                    <a href="/products">Whole Grains</a>
                   </li>
                   <li className="site-footer__linklist-item">
-                    <a href="/products">Item 4</a>
+                    <a href="/products">Iphone Charger</a>
                   </li>
                   <li className="site-footer__linklist-item">
-                    <a href="/products">Item 1</a>
+                    <a href="/products">One Plus 9</a>
                   </li>
                   <li className="site-footer__linklist-item">
-                    <a href="/products">Item 5</a>
+                    <a href="/products">Coca Cola</a>
                   </li>
                   <li className="site-footer__linklist-item">
-                    <a href="/products">Item 6</a>
+                    <a href="/products">Iphone Wallet Case</a>
                   </li>
                 </ul>
               </div>
@@ -179,8 +179,7 @@ const Footer = () => {
                               "
                 >
                   <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Deserunt id iure ullam vel quibusdam aliquid, eligendi.
+                    Hope Shopworks is being a reliable partner to you and for any query you can contact us with the given mail or phone no. 
                   </p>
                   <p>Email: shopworks@gmail.com</p>
                   <p>Phone: +91-9624226677</p>
@@ -265,7 +264,7 @@ const Footer = () => {
             {/* <div class="text-sm mb-8 text-gray-500 sm:text-center dark:text-gray-400">© 2021-2022 <a href="#" class="hover:underline">Flowbite™</a>. All Rights Reserved.</div> */}
         {/*  */}
 
-        <div class="sec-footer">
+        <div class="sec-footer ">
           <div class="social-holder">
             <div class="downloadApp">
               <div class="download-text">Payment With</div>
@@ -307,11 +306,11 @@ const Footer = () => {
                 <div class="appIconHolder">
                   <div class="icon-image">
                     {" "}
-                    <BsFacebook />
+                    <BsFacebook  />
                   </div>
                 </div>
               </a>
-              <a href="#">
+              <a href="http://wa.me/919624226677">
                 <div class="appIconHolder">
                   <div class="icon-image">
                     {" "}
@@ -333,7 +332,7 @@ const Footer = () => {
                   </div>
                 </div>
               </a>
-              <a href="#">
+              <a href="http://wa.me/919624226677">
                 <div class="appIconHolder">
                   <div class="icon-image">
                     {" "}
