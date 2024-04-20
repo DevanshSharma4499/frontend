@@ -93,34 +93,34 @@ const Footer = () => {
                     "
             >
               <div className="site-footer__item-inner site-footer__item-inner--link_list">
-                <p className="h4">Top Products</p>
+                <p className="h4">Top product</p>
                 <ul
                   className="site-footer__linklist
                             "
                 >
                   <li className="site-footer__linklist-item">
-                    <a href="/products">Iphone</a>
+                    <a href="/product/1">Iphone</a>
                   </li>
                   <li className="site-footer__linklist-item">
-                    <a href="/products">Amul Cheese</a>
+                    <a href="/product">Amul Cheese</a>
                   </li>
                   <li className="site-footer__linklist-item">
-                    <a href="/products">HP laptop</a>
+                    <a href="/product">HP laptop</a>
                   </li>
                   <li className="site-footer__linklist-item">
-                    <a href="/products">Whole Grains</a>
+                    <a href="/product">Whole Grains</a>
                   </li>
                   <li className="site-footer__linklist-item">
-                    <a href="/products">Iphone Charger</a>
+                    <a href="/product">Iphone Charger</a>
                   </li>
                   <li className="site-footer__linklist-item">
-                    <a href="/products">One Plus 9</a>
+                    <a href="/product">One Plus 9</a>
                   </li>
                   <li className="site-footer__linklist-item">
-                    <a href="/products">Coca Cola</a>
+                    <a href="/product">Coca Cola</a>
                   </li>
                   <li className="site-footer__linklist-item">
-                    <a href="/products">Iphone Wallet Case</a>
+                    <a href="/product">Iphone Wallet Case</a>
                   </li>
                 </ul>
               </div>
