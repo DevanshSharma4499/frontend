@@ -146,19 +146,7 @@ const Product = () => {
             </span>
           </div>
           {/* <div className="btn-groups">
-                <div className="selection-box">
-                  <select className="choose">
-                    <option value="option1"> 1</option>
-                    <option value="option2"> 2</option>
-                    <option value="option3"> 3</option>
-                  </select>
-                </div>
-                <button type="button" className="add-cart-btn">
-                  <i className="fas fa-shopping-cart"></i>Add To Cart
-                </button>
-                <button type="button" className="buy-now-btn">
-                  <i className="fas fa-wallet"></i>Buy Now
-                </button>
+                
               </div> */}
           <div className="flex flex-row items-center gap-12 pt-4">
             <div className="flex flex-row items-center">

@@ -7,7 +7,7 @@ import { useContext } from "react";
 // import { Context } from "react";
 import Search from "../Search";
 import { Dialog, Disclosure, Popover, Menu, Tab, Transition, } from "@headlessui/react";
-
+import { useNavigate } from "react-router-dom";
 import { userData } from "../../helper";
 // import Cart from "../Cart/Cart";
 import { useSelector } from "react-redux";
@@ -15,6 +15,7 @@ import { useSelector } from "react-redux";
 import { Bars3Icon, MagnifyingGlassIcon, ShoppingBagIcon, XMarkIcon, ChevronDownIcon } from "@heroicons/react/24/outline";
 
 const navigation = {
+  
   categories: [
     {
       id: "women",
@@ -149,6 +150,7 @@ function classNames(...classes) {
 }
 
 export default function Header() {
+  const navigate = useNavigate();
   const { username } = userData();
   // const [{ basket }, dispatch] = useStateValue();
   // const { cartCount } = useContext(Context);
@@ -167,6 +169,7 @@ export default function Header() {
 
   return (
     <>
+    <div className="bg-[#D9F8FF]">
       <div className="bg-[#dff5ff] z-10 sticky top-0">
         {/* Mobile menu */}
 
@@ -306,11 +309,8 @@ export default function Header() {
                 >
                   Home
                 </NavLink>
-                <NavLink
-                  to="./cartpage"
-                  className="pl-12 font-semibold text-lg text-gray-700 imp"
-                >
-                    <Menu as="div" className="relative inline-block text-left">
+               
+                    <Menu as="div" className="relative inline-block text-left pl-12 font-semibold text-lg text-gray-700 imp">
                     <div>
                       <Menu.Button className="inline-flex w-full justify-center gap-x-1.5 px-3 py-2 text-lg text-gray-700  ">
                        Category
@@ -331,55 +331,100 @@ export default function Header() {
                         <div className="py-1">
                           <Menu.Item>
                             {({ active }) => (
-                              <a
-                                href="#"
+                              <div onClick={()=> navigate("/category/" + 1)}
+                                
                                 className={classNames(
                                   active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
                                   'block px-4 py-2 text-sm'
                                 )}
                               >
-                                Account settings
-                              </a>
+                                Dairy Products
+                              </div>
                             )}
                           </Menu.Item>
                           <Menu.Item>
                             {({ active }) => (
-                              <a
-                                href="#"
+                               <div onClick={()=> navigate("/category/" + 2)}
                                 className={classNames(
                                   active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
                                   'block px-4 py-2 text-sm'
                                 )}
                               >
-                                Support
-                              </a>
+                                Eletronics
+                              </div>
                             )}
                           </Menu.Item>
                           <Menu.Item>
                             {({ active }) => (
-                              <a
-                                href="#"
-                                className={classNames(
-                                  active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                                  'block px-4 py-2 text-sm'
-                                )}
-                              >
-                                License
-                              </a>
+                              <div onClick={()=> navigate("/category/" + 3)}
+                              className={classNames(
+                                active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                                'block px-4 py-2 text-sm'
+                              )}
+                            >
+                              Grains
+                            </div>
                             )}
                           </Menu.Item>
                           <form method="POST" action="#">
                             <Menu.Item>
                               {({ active }) => (
-                                <button
-                                  type="submit"
-                                  className={classNames(
-                                    active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                                    'block w-full px-4 py-2 text-left text-sm'
-                                  )}
-                                >
-                                  Sign out
-                                </button>
+                               <div onClick={()=> navigate("/category/" +4)}
+                               className={classNames(
+                                 active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                                 'block px-4 py-2 text-sm'
+                               )}
+                             >
+                               Accessories
+                             </div>
+                              )}
+                            </Menu.Item>
+                            <Menu.Item>
+                              {({ active }) => (
+                               <div onClick={()=> navigate("/category/" +5)}
+                               className={classNames(
+                                 active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                                 'block px-4 py-2 text-sm'
+                               )}
+                             >
+                               Snacks
+                             </div>
+                              )}
+                            </Menu.Item>
+                            <Menu.Item>
+                              {({ active }) => (
+                               <div onClick={()=> navigate("/category/" +6)}
+                               className={classNames(
+                                 active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                                 'block px-4 py-2 text-sm'
+                               )}
+                             >
+                               Home Appliances
+                             </div>
+                              )}
+                            </Menu.Item>
+                            <Menu.Item>
+                              {({ active }) => (
+                               <div onClick={()=> navigate("/category/" +4)}
+                               className={classNames(
+                                 active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                                 'block px-4 py-2 text-sm'
+                               )}
+                             >
+                               Kitchen Utencils
+                             </div>
+                              )}
+                            </Menu.Item>
+                            <Menu.Item>
+                              {({ active }) => (
+                               <div onClick={()=> navigate("/category/" +4)}
+                               className={classNames(
+                                 active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                                 'block px-4 py-2 text-sm'
+                               )}
+                             >
+                               Drinks and Bevrages
+                             </div>
                               )}
                             </Menu.Item>
                           </form>
@@ -387,7 +432,7 @@ export default function Header() {
                       </Menu.Items>
                     </Transition>
                   </Menu>
-                </NavLink>
+                
                 <NavLink
                   to="./cartpage"
                   className="pl-12 font-semibold text-lg text-gray-700 imp"
@@ -815,7 +860,8 @@ export default function Header() {
         </header>
       </div>
       {showCart && <Cart setshowCart={setshowCart} />}
-      {searchModal && <Search setSearchModal={setSearchModal} />}
+      {searchModal && <Search className="bg-[#D9F8FF]"  setSearchModal={setSearchModal} />}
+      </div>
     </>
   );
 }

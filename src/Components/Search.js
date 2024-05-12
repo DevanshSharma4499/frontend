@@ -19,10 +19,11 @@ const Search = ({ setSearchModal }) => {
   }
   return (
     
-    <div className="search-bar">
-      <div className="search-model ">
-        <div className="form-field md:p-5">
-          <input
+    <div className="search-bar bg-[##D9F8FF]">
+    
+      <div className="search-model bg-[##D9F8FF]">
+        <div className="form-field md:p-5 bg-[##D9F8FF]">
+          <input 
             onChange={onChange}
             type="text  "
             autoFocus

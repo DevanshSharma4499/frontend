@@ -472,8 +472,10 @@ text:white
   z-index: 999;
   top: 0;
   left: 0;
-  background-color: floralwhite;
-
+  background-color:#D9F8FF !important;
+}
+input, textarea {
+  background-color: #d9f8ff;
 }
 
 .form-field {
@@ -507,19 +509,21 @@ text:white
 }
 
 .search-col {
+  background-color:#D9F8FF;
   flex: 25%;
 }
 
 .search-result-content {
   max-width: calc(100%-20%);
   margin: 0 auto;
-
+  background-color:#D9F8FF;
 }
 
 .search-result {
   /* height: calc(70vh - 110px); */
   overflow: auto;
   margin: 20px 0;
+  background-color:#D9F8FF;
 
 }
 
@@ -532,6 +536,7 @@ text:white
   cursor: pointer;
   margin-left: 20px;
   margin-right: 20px;
+  background-color:#D9F8FF;
 }
 
 .descript {

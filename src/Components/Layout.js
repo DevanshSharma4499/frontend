@@ -16,7 +16,7 @@ const Layout = () => {
       <Toaster position='top-center' />
       <WhatsAppWidget
         phoneNo="919624226677"
-        position="right"
+        position="left"
         widgetWidth="300px"
         widgetWidthMobile="300px"
         autoOpen={false}
